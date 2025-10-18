@@ -1,0 +1,5 @@
+{
+  "name": "AI Pomodoro Focus",
+  "description": "A progressive web app (PWA) that combines a customizable Pomodoro timer with an AI-powered task manager to help you break down tasks, stay focused, and be more productive.",
+  "requestFramePermissions": []
+}

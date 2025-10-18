@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Pomodoro Focus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Noto Sans JP', 'sans-serif'],
+            },
+            colors: {
+              // Light theme using CSS variables
+              'primary': 'hsl(var(--light-primary))',
+              'on-primary': 'hsl(var(--light-on-primary))',
+              'primary-container': 'hsl(var(--light-primary-container))',
+              'on-primary-container': 'hsl(var(--light-on-primary-container))',
+              'secondary': 'hsl(var(--light-secondary))',
+              'on-secondary': 'hsl(var(--light-on-secondary))',
+              'secondary-container': 'hsl(var(--light-secondary-container))',
+              'on-secondary-container': 'hsl(var(--light-on-secondary-container))',
+              'tertiary': 'hsl(var(--light-tertiary))',
+              'on-tertiary': 'hsl(var(--light-on-tertiary))',
+              'tertiary-container': 'hsl(var(--light-tertiary-container))',
+              'on-tertiary-container': 'hsl(var(--light-on-tertiary-container))',
+              'error': 'hsl(var(--light-error))',
+              'on-error': 'hsl(var(--light-on-error))',
+              'error-container': 'hsl(var(--light-error-container))',
+              'on-error-container': 'hsl(var(--light-on-error-container))',
+              'background': 'hsl(var(--light-background))',
+              'on-background': 'hsl(var(--light-on-background))',
+              'surface': 'hsl(var(--light-surface))',
+              'on-surface': 'hsl(var(--light-on-surface))',
+              'surface-variant': 'hsl(var(--light-surface-variant))',
+              'on-surface-variant': 'hsl(var(--light-on-surface-variant))',
+              'outline': 'hsl(var(--light-outline))',
+              'scrim': 'hsl(var(--light-scrim))',
+
+              // Dark theme using CSS variables
+              'primary-dark': 'hsl(var(--dark-primary))',
+              'on-primary-dark': 'hsl(var(--dark-on-primary))',
+              'primary-container-dark': 'hsl(var(--dark-primary-container))',
+              'on-primary-container-dark': 'hsl(var(--dark-on-primary-container))',
+              'secondary-dark': 'hsl(var(--dark-secondary))',
+              'on-secondary-dark': 'hsl(var(--dark-on-secondary))',
+              'secondary-container-dark': 'hsl(var(--dark-secondary-container))',
+              'on-secondary-container-dark': 'hsl(var(--dark-on-secondary-container))',
+              'tertiary-dark': 'hsl(var(--dark-tertiary))',
+              'on-tertiary-dark': 'hsl(var(--dark-on-tertiary))',
+              'tertiary-container-dark': 'hsl(var(--dark-tertiary-container))',
+              'on-tertiary-container-dark': 'hsl(var(--dark-on-tertiary-container))',
+              'error-dark': 'hsl(var(--dark-error))',
+              'on-error-dark': 'hsl(var(--dark-on-error))',
+              'error-container-dark': 'hsl(var(--dark-error-container))',
+              'on-error-container-dark': 'hsl(var(--dark-on-error-container))',
+              'background-dark': 'hsl(var(--dark-background))',
+              'on-background-dark': 'hsl(var(--dark-on-background))',
+              'surface-dark': 'hsl(var(--dark-surface))',
+              'on-surface-dark': 'hsl(var(--dark-on-surface))',
+              'surface-variant-dark': 'hsl(var(--dark-surface-variant))',
+              'on-surface-variant-dark': 'hsl(var(--dark-on-surface-variant))',
+              'outline-dark': 'hsl(var(--dark-outline))',
+            },
+            borderRadius: {
+              'none': '0',
+              'xs': '0.25rem', // 4px
+              'sm': '0.5rem', // 8px
+              'md': '0.75rem', // 12px
+              'lg': '1rem', // 16px
+              'xl': '1.75rem', // 28px
+              '2xl': '1.5rem', // 24px
+              'full': '9999px',
+            }
+          },
+        },
+      }
+    </script>
+    <meta name="theme-color" content="#FFFBFE">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0",
+    "uuid": "https://aistudiocdn.com/uuid@^13.0.0"
+  }
+}
+</script>
+</head>
+<body class="bg-background dark:bg-background-dark font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js').then(registration => {
+            console.log('SW registered: ', registration);
+          }).catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
+        });
+      }
+    </script>
+</body>
+</html>
